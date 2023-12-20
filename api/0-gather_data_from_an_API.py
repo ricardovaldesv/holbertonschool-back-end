@@ -49,7 +49,7 @@ def display_employee():
 
             # Print completed tasks in a list
             for TASK_TITLE in completed_tasks:
-                print(f"     {TASK_TITLE}")
+                print(f"\t {TASK_TITLE}")
         else:
             print("No employee was found with that ID.")
 
