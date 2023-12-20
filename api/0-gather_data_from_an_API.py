@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-given employee ID, returns information about his/her TODO list progress.
+given employee ID, returns information about his/her todo list progress.
 """
 import requests
 import sys
@@ -8,7 +8,7 @@ import sys
 
 def display_employee():
     """
-    given employee ID, returns information about his/her TODO list progress.
+    given employee ID, returns information about his/her todo list progress.
     """
     employee_id = sys.argv[1]
     todos_url = 'https://jsonplaceholder.typicode.com/todos'
