@@ -44,7 +44,8 @@ def display_employee():
                                          ['userId'] == int(employee_id)
                                          ])
 
-            print(f"Employee {EMPLOYEE_NAME} is done with tasks{NUMBER_OF_DONE_TASKS}/{TOTAL_NUMBER_OF_TASKS}:")
+            print(f"Employee {EMPLOYEE_NAME} is done with tasks"
+                  f"({NUMBER_OF_DONE_TASKS}/{TOTAL_NUMBER_OF_TASKS}):")
 
             # Print completed tasks in a list
             for TASK_TITLE in completed_tasks:
@@ -57,7 +58,5 @@ def display_employee():
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python script.py <employee_id>")
-        sys.exit(1)
+
     display_employee()
