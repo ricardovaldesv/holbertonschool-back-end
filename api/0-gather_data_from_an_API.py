@@ -37,7 +37,7 @@ def display_employee():
 
         # Print the employee's completed tasks
         if int(employee_id) in user_names:
-            EMPLOYEE_NAME = user_names[int(employee_id)]
+            EMPLOYEE_NAME = str(user_names[int(employee_id)])
             NUMBER_OF_DONE_TASKS = len(completed_tasks)
             TOTAL_NUMBER_OF_TASKS = len([
                                          task for task in todos_data if task
