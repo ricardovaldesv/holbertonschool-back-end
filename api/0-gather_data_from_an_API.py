@@ -1,9 +1,15 @@
 #!/usr/bin/python3
-
+"""
+given employee ID, returns information about his/her TODO list progress.
+"""
 import requests
 import sys
 
+
 def display_employee():
+    """
+    given employee ID, returns information about his/her TODO list progress.
+    """
     employee_id = sys.argv[1]
     todos_url = 'https://jsonplaceholder.typicode.com/todos'
     users_url = 'https://jsonplaceholder.typicode.com/users'
@@ -14,7 +20,7 @@ def display_employee():
     if todos.status_code == 200 and users.status_code == 200:
         todos_data = todos.json()
         users_data = users.json()
-        
+
         # Create a dictionary for mapping user IDs to names
         user_names = {user['id']: user['name'] for user in users_data}
 
@@ -33,10 +39,14 @@ def display_employee():
         if int(employee_id) in user_names:
             EMPLOYEE_NAME = user_names[int(employee_id)]
             NUMBER_OF_DONE_TASKS = len(completed_tasks)
-            TOTAL_NUMBER_OF_TASKS = len([task for task in todos_data if task['userId'] == int(employee_id)])
-            
-            print(f"Employee {EMPLOYEE_NAME} is done with tasks ({NUMBER_OF_DONE_TASKS}/{TOTAL_NUMBER_OF_TASKS}):")
-            
+            TOTAL_NUMBER_OF_TASKS = len([
+                                         task for task in todos_data if task
+                                         ['userId'] == int(employee_id)
+                                         ])
+
+            print(f"Employee {EMPLOYEE_NAME} is done with tasks "
+                  f"({NUMBER_OF_DONE_TASKS}/{TOTAL_NUMBER_OF_TASKS}):")
+
             # Print completed tasks in a list
             for TASK_TITLE in completed_tasks:
                 print(f"     {TASK_TITLE}")
@@ -45,6 +55,7 @@ def display_employee():
 
     else:
         print("The information could not be obtained from the server.")
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
