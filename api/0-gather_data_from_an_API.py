@@ -44,7 +44,7 @@ def display_employee():
                                          ['userId'] == int(employee_id)
                                          ])
 
-            print(f"Employee {EMPLOYEE_NAME} is done with tasks "
+            print(f"Employee {EMPLOYEE_NAME} is done with tasks"
                   f"({NUMBER_OF_DONE_TASKS}/{TOTAL_NUMBER_OF_TASKS}):")
 
             # Print completed tasks in a list
