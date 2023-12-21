@@ -4,8 +4,8 @@ Exports information about
 his/her todo list progress to a JSON format.
 """
 
-import requests
 import json
+import requests
 
 
 def export_all_to_json():
