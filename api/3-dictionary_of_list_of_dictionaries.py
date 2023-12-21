@@ -44,7 +44,6 @@ def export_all_to_json():
         filename = "todo_all_employees.json"
         with open(filename, 'w') as file:
             json.dump(all_employees_data, file)
-        print(f"Data exported to {filename}")
     else:
         print("Failed to fetch data from the server.")
 
