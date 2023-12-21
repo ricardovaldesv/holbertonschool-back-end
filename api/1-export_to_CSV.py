@@ -1,9 +1,19 @@
+#!/usr/bin/python3
+"""
+Given employee ID, exports information about
+his/her todo list progress to a CSV file.
+"""
+
 import csv
 import requests
 import sys
 
 
 def export_to_csv(employee_id):
+    """
+    Given employee ID, exports information about
+    his/her todo list progress to a CSV file.
+    """
     todos = f'https://jsonplaceholder.typicode.com/todos?userId={employee_id}'
     users_url = f'https://jsonplaceholder.typicode.com/users/{employee_id}'
 
