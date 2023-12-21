@@ -4,9 +4,9 @@ Given employee ID, exports information about
 his/her todo list progress to a JSON format.
 """
 
+import json
 import requests
 import sys
-import json
 
 
 def export_to_json(employee_id):
